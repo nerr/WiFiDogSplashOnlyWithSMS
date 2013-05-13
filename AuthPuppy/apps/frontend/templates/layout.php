@@ -1,5 +1,6 @@
 <?php
-
+//--
+$action = 'http://'.$_SERVER['SERVER_ADDR'].$_SERVER['REQUEST_URI'];
 //--
 $site_name = apAuthpuppyConfig::getConfigOption("site_name","");
 //--
@@ -9,44 +10,6 @@ if ($site_name != '')
     sfContext::getInstance()->getResponse()->setTitle($site_name);
 
 ?>
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
-    <head>
-    <?php include_http_metas() ?>
-    <?php include_metas() ?>
-    <?php include_title() ?>
-    <link rel="shortcut icon" href="/favicon.ico" />
-    <?php use_stylesheet('jQuery/themes/ui-lightness/jquery-ui-1.8.2.custom.css') ?>
-    <?php include_stylesheets() ?>
-    <?php use_javascript('jQuery/jquery-1.4.2.min.js') ?>
-    <?php use_javascript('jQuery/jquery-ui-1.8.2.custom.min.js') ?>
-    <?php use_javascript('menu.js') ?>
-    <?php include_javascripts() ?>
-    </head>
-    <body>
-
-    <div id="page" class="container ">
-
-        <div id="content" class="span-16">
-            <?php if ($sf_user->hasFlash('notice')): ?>
-                <div class="notice"><?php echo __($sf_user->getFlash('notice')) ?></div>
-            <?php endif; ?>
-     
-            <?php if ($sf_user->hasFlash('error')): ?>
-                <div class="error"><?php echo __($sf_user->getFlash('error')) ?></div>
-            <?php endif; ?>
-            <?php echo $sf_content ?>
-        </div>
-
-    </div>
-    </body>
-</html>
-
-
-
-
-
 
 <!DOCTYPE html>
 <html>
@@ -59,13 +22,13 @@ if ($site_name != '')
         <meta name="author" content="Leon Zhuang">
 
         <!-- Le styles -->
-        <?php use_stylesheet('bootstrap.css') ?>
+        <link href="/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
                 padding-top: 20px;
                 padding-bottom: 40px;
                 font-family: "Microsoft YaHei","Trebuchet MS","Myriad Pro",Arial,sans-serif;
-                background-image: url("img/grey.png");
+                background-image: url("/img/grey.png");
             }
 
             /* Custom container */
@@ -110,12 +73,11 @@ if ($site_name != '')
                 height: 130px;
             }
         </style>
-        <?php use_stylesheet('bootstrap-responsive.css') ?>
-        <?php include_stylesheets() ?>
+        <link href="/css/bootstrap-responsive.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-          <script src="js/html5shiv.js"></script>
+          <script src="/js/html5shiv.js"></script>
         <![endif]-->
 
         <!-- Fav and touch icons -->
@@ -149,21 +111,21 @@ if ($site_name != '')
 
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="img/0001.png" alt="">
+                        <img src="/img/0001.png" alt="">
                         <div class="carousel-caption">
                             <h4>辛香麻辣</h4>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/0002.png" alt="">
+                        <img src="/img/0002.png" alt="">
                         <div class="carousel-caption">
                             <h4>经典火锅</h4>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/0003.png" alt="">
+                        <img src="/img/0003.png" alt="">
                         <div class="carousel-caption">
                             <h4>源自山城</h4>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -190,21 +152,25 @@ if ($site_name != '')
                         </p>
                     </form>
 
-                    <form  action="$action" autocomplete="on" method="post" id="auth">
+                    <form action="<?php echo $action; ?>"  autocomplete="on" method="post" id="auth">
+
                         <h4><span class="badge badge-info">2</span>&nbsp;输入短信验证码</h4>
                         <p> 
                             <label>6位数字</label>
                             <input id="smspass" name="smspass" type="text" placeholder="" disabled="disabled" />
                         </p>
                         <p>
-                            <input class="btn btn-success" id="submit" type="submit" value="登陆" disabled="disabled" />
+                            <input name="submit[apAuthSplashOnlyConnect]" class="btn btn-success" id="submit" type="submit" value="登陆" disabled="disabled" />
                             <span id="authstatus"></span>
                         </p>
 
+                        <input type="hidden" name="gw_id" value="<?php echo $_GET['gw_id']; ?>" />
+                        <input type="hidden" name="gw_address" value="<?php echo $_GET['gw_address']; ?>" />
+                        <input type="hidden" name="gw_port" value="<?php echo $_GET['gw_port']; ?>" />
+                        <input type="hidden" name="url" value="http://weibo.com/mlyinxiang" />
+                        <input type="hidden" id="authenticators" name="authenticator" value="apAuthSplashOnly"/>
+
                         <input type="hidden" name="md5smspass" id="md5smspass" value="" />
-                        <input type="hidden" name="mode_login">
-                        <input type="hidden" name="redirect" value="http://weibo.com/mlyinxiang">
-                        <input type="hidden" name="accept_terms" value="yes">
                     </form>
                 </div>
 
@@ -213,13 +179,13 @@ if ($site_name != '')
                     <div class="row-fluid">
                         <div class="span6">
                             <h4>我们的微信</h4>
-                            <img src="img/weixin_qr.png" alt="" class="qr">
+                            <img src="/img/weixin_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
 
                         <div class="span6">
                             <h4>我们的新浪微博</h4>
-                            <img src="img/weibo_qr.png" alt="" class="qr">
+                            <img src="/img/weibo_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
                     </div>
@@ -311,7 +277,7 @@ if ($site_name != '')
                         $('#sendsms').attr('disabled', 'disabled');
                         $('#sendstatus').text('请稍候').attr('class', 'msginfo');
 
-                        var url = "<?php echo sms_url; ?>/hotspot/serv/auth.php?action=step1&mobile="+mp+"&client="+client+"&callback=?";
+                        var url = "<?php echo $sms_url; ?>/serv/auth.php?action=step1&mobile="+mp+"&client="+client+"&callback=?";
 
                         $.getJSON(url, function(data){
 
