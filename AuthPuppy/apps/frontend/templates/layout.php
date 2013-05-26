@@ -22,13 +22,13 @@ if ($site_name != '')
         <meta name="author" content="Leon Zhuang">
 
         <!-- Le styles -->
-        <link href="/css/bootstrap.css" rel="stylesheet">
+        <link href="/authpuppy/web/css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
             body {
                 padding-top: 20px;
                 padding-bottom: 40px;
                 font-family: "Microsoft YaHei","Trebuchet MS","Myriad Pro",Arial,sans-serif;
-                background-image: url("/img/grey.png");
+                background-image: url("/authpuppy/web/img/grey.png");
             }
 
             /* Custom container */
@@ -73,11 +73,11 @@ if ($site_name != '')
                 height: 130px;
             }
         </style>
-        <link href="/css/bootstrap-responsive.css" rel="stylesheet">
+        <link href="/authpuppy/web/css/bootstrap-responsive.css" rel="stylesheet">
 
         <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
         <!--[if lt IE 9]>
-          <script src="/js/html5shiv.js"></script>
+          <script src="/authpuppy/web/js/html5shiv.js"></script>
         <![endif]-->
 
         <!-- Fav and touch icons -->
@@ -111,21 +111,21 @@ if ($site_name != '')
 
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="/img/0001.png" alt="">
+                        <img src="/authpuppy/web/img/0001.png" alt="">
                         <div class="carousel-caption">
                             <h4>辛香麻辣</h4>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/img/0002.png" alt="">
+                        <img src="/authpuppy/web/img/0002.png" alt="">
                         <div class="carousel-caption">
                             <h4>经典火锅</h4>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="/img/0003.png" alt="">
+                        <img src="/authpuppy/web/img/0003.png" alt="">
                         <div class="carousel-caption">
                             <h4>源自山城</h4>
                             <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
@@ -179,13 +179,13 @@ if ($site_name != '')
                     <div class="row-fluid">
                         <div class="span6">
                             <h4>我们的微信</h4>
-                            <img src="/img/weixin_qr.png" alt="" class="qr">
+                            <img src="/authpuppy/web/img/weixin_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
 
                         <div class="span6">
                             <h4>我们的新浪微博</h4>
-                            <img src="/img/weibo_qr.png" alt="" class="qr">
+                            <img src="/authpuppy/web/img/weibo_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
                     </div>
