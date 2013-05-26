@@ -25,7 +25,7 @@ $html = $hotspot->admin($_POST['password'], $_POST['sdate']);
 		<meta name="author" content="Leon Zhuang">
 
 		<!-- Le styles -->
-		<link href="../css/bootstrap.css" rel="stylesheet">
+		<link href="../authpuppy/web/css/bootstrap.css" rel="stylesheet">
 		<style type="text/css">
 			body {
 				padding-top: 20px;
@@ -76,10 +76,10 @@ $html = $hotspot->admin($_POST['password'], $_POST['sdate']);
 			}
 
 		</style>
-		<link href="../css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="../authpuppy/web/css/bootstrap-responsive.css" rel="stylesheet">
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
-		  <script src="js/html5shiv.js"></script>
+		  <script src="../authpuppy/web/js/html5shiv.js"></script>
 		<![endif]-->
 
 		<!-- Fav and touch icons -->
@@ -154,9 +154,9 @@ $html = $hotspot->admin($_POST['password'], $_POST['sdate']);
 		<!-- Le javascript
 		================================================== -->
 		<!-- Placed at the end of the document so the pages load faster -->
-		<script src="../js/jquery.js"></script>
-		<script src="../js/jquery.md5.js"></script>
-		<script src="../js/bootstrap.min.js"></script>
+		<script src="../authpuppy/web/js/jquery.js"></script>
+		<script src="../authpuppy/web/js/jquery.md5.js"></script>
+		<script src="../authpuppy/web/js/bootstrap.min.js"></script>
 
 		<!-- js -->
 		<script type="text/javascript">
