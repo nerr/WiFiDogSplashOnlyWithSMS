@@ -113,6 +113,11 @@
 
 			<div class="marketing">
 				<h2>认证成功，祝您用餐愉快。</h2>
+
+				<?php if(strlen($_GET['userurl'])>0){ ?>
+				<a href="<?php echo $_GET['userurl']; ?>"><?php echo $_GET['userurl']; ?></a>
+				<?php } ?>
+				
 			</div>
 
 			<hr>
