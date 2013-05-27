@@ -156,11 +156,17 @@
 		<!-- js -->
 		<script type="text/javascript">
 			$(document).ready(function(){
-				if(navigator.userAgent.match(/iPhone|iPad|iPod/i))
+				if(navigator.userAgent.match(/iPhone|iPod/i))
 				{
 					//window.location = "weixin://r/2mpcU1TEV2ooh0Uwnz-_";
 					window.location = "dianping://shopinfo?id=9078228";
-            		setTimeout( function(){ window.location="http://itunes.apple.com/us/app/wechat!/id414478124?mt=8"; } , 1500);
+            		setTimeout( function(){ window.location="https://itunes.apple.com/cn/app/da-zhong-dian-ping-tuan-gou/id351091731?mt=8"; } , 1500);
+				}
+				if(navigator.userAgent.match(/iPad/i))
+				{
+					//window.location = "weixin://r/2mpcU1TEV2ooh0Uwnz-_";
+					window.location = "dianpinghd://shopinfo?id=9078228";
+            		setTimeout( function(){ window.location="https://itunes.apple.com/cn/app/da-zhong-dian-pinghd/id486691005?mt=8"; } , 1500);
 				}
 			});
 		</script>
