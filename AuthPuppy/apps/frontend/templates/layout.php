@@ -146,7 +146,7 @@ $user_redirect = $_GET['url'];
                         <h4><span class="badge badge-info">1</span>&nbsp;输入手机号码</h4>
                         <p> 
                             <label>用于接收动态短信验证码</label>
-                            <input id="mobile" name="mobile" type="text" placeholder=""/>
+                            <input id="mobile" name="mobile" type="tel" placeholder=""/>
                         </p>
                         <p>
                             <input class="btn btn-success" id="sendsms" type="submit" value="获取" />
@@ -159,7 +159,7 @@ $user_redirect = $_GET['url'];
                         <h4><span class="badge badge-info">2</span>&nbsp;输入短信验证码</h4>
                         <p> 
                             <label>6位数字</label>
-                            <input id="smspass" name="smspass" type="text" placeholder="" disabled="disabled" />
+                            <input id="smspass" name="smspass" type="tel" placeholder="" disabled="disabled" />
                         </p>
                         <p>
                             <input name="submit[apAuthSplashOnlyConnect]" class="btn btn-success" id="submit" type="submit" value="登陆" disabled="disabled" />
