@@ -83,7 +83,7 @@ $user_redirect = $_GET['url'];
         <![endif]-->
 
         <!-- Fav and touch icons -->
-        <!-- 
+        <!--
         <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
         <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
@@ -116,21 +116,21 @@ $user_redirect = $_GET['url'];
                         <img src="/authpuppy/web/img/0001.png" alt="">
                         <div class="carousel-caption">
                             <h4>辛香麻辣</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>全新推出劲爆干锅</p>
                         </div>
                     </div>
                     <div class="item">
                         <img src="/authpuppy/web/img/0002.png" alt="">
                         <div class="carousel-caption">
                             <h4>经典火锅</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>晚市88折, 午市夜宵68折</p>
                         </div>
                     </div>
                     <div class="item">
                         <img src="/authpuppy/web/img/0003.png" alt="">
                         <div class="carousel-caption">
                             <h4>源自山城</h4>
-                            <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                            <p>最重庆, 引爆夏日激情</p>
                         </div>
                     </div>
                 </div>
@@ -142,9 +142,9 @@ $user_redirect = $_GET['url'];
 
             <div class="row-fluid marketing">
                 <div class="span6">
-                    <form  action="###" autocomplete="on" method="post" id="sendmobile"> 
+                    <form  action="###" autocomplete="on" method="post" id="sendmobile">
                         <h4><span class="badge badge-info">1</span>&nbsp;输入手机号码</h4>
-                        <p> 
+                        <p>
                             <label>用于接收动态短信验证码</label>
                             <input id="mobile" name="mobile" type="tel" placeholder=""/>
                         </p>
@@ -157,7 +157,7 @@ $user_redirect = $_GET['url'];
                     <form action="<?php echo $action; ?>"  autocomplete="on" method="post" id="auth">
 
                         <h4><span class="badge badge-info">2</span>&nbsp;输入短信验证码</h4>
-                        <p> 
+                        <p>
                             <label>6位数字</label>
                             <input id="smspass" name="smspass" type="tel" placeholder="" disabled="disabled" />
                         </p>

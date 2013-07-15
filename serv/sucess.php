@@ -1,8 +1,9 @@
+
 <!DOCTYPE html>
 <html>
 	<head>
 		<meta charset="utf-8">
-		<title>麻香传奇 &middot; 免费无线网络</title>
+		<title>认证成功, 祝您用餐愉快</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Hotspot Auth Page">
 		<meta name="revised" content="Leon, 2013/3/6/" />
@@ -15,12 +16,13 @@
 				padding-top: 20px;
 				padding-bottom: 40px;
 				font-family: "Microsoft YaHei","Trebuchet MS","Myriad Pro",Arial,sans-serif;
+				background-image: url("../authpuppy/web/img/grey.png");
 			}
 
 			/* Custom container */
 			.container-narrow {
 				margin: 0 auto;
-				max-width: 980px;
+				max-width: 700px;
 			}
 			.container-narrow > hr {
 				margin: 30px 0;
@@ -58,12 +60,12 @@
 			.qr {
 				height: 130px;
 			}
-
 		</style>
 		<link href="../authpuppy/web/css/bootstrap-responsive.css" rel="stylesheet">
+
 		<!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
 		<!--[if lt IE 9]>
-		  <script src="../authpuppy/web/js/html5shiv.js"></script>
+		  <script src="/authpuppy/web/js/html5shiv.js"></script>
 		<![endif]-->
 
 		<!-- Fav and touch icons -->
@@ -79,45 +81,79 @@
 
 		<div class="container-narrow">
 
-			<div class="navbar navbar-inverse navbar-fixed-top">
-				<div class="navbar-inner">
-				<div class="container">
-				<button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				<span class="icon-bar"></span>
-				</button>
-				<a class="brand" href="#">麻香传奇</a>
-				<div class="nav-collapse collapse">
-				<!-- <ul class="nav">
-				<li class="active"><a href="#">Home</a></li>
-				<li><a href="#about">About</a></li>
-				<li><a href="#contact">Contact</a></li>
-				<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-				<ul class="dropdown-menu">
-				<li><a href="#">Action</a></li>
-				<li><a href="#">Another action</a></li>
-				<li><a href="#">Something else here</a></li>
-				<li class="divider"></li>
-				<li class="nav-header">Nav header</li>
-				<li><a href="#">Separated link</a></li>
-				<li><a href="#">One more separated link</a></li>
+			<div class="masthead">
+				<ul class="nav nav-pills pull-right">
+					<!-- <li class="active"><a href="#help" role="button" data-toggle="modal">帮助</a></li> -->
 				</ul>
-				</li>
-				</ul> -->
-				</div>
-				</div>
-				</div>
+				<h2>认证成功, 祝您用餐愉快 <br /><br />麻香传奇 &middot; 免费无线网络</h2>
 			</div>
 
-			<div class="marketing">
-				<h2>认证成功，祝您用餐愉快。</h2>
+			<!-- <hr> -->
 
-				<?php if(strlen($_GET['userurl'])>0){ ?>
-				<a href="<?php echo $_GET['userurl']; ?>"><?php echo $_GET['userurl']; ?></a>
-				<?php } ?>
-				
+			<div id="myCarousel" class="carousel slide marketing">
+				<ol class="carousel-indicators">
+					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+					<li data-target="#myCarousel" data-slide-to="1"></li>
+					<li data-target="#myCarousel" data-slide-to="2"></li>
+				</ol>
+
+				<div class="carousel-inner">
+					<div class="item active">
+						<img src="../authpuppy/web/img/0001.png" alt="">
+						<div class="carousel-caption">
+							<h4>辛香麻辣</h4>
+							<p>全新推出劲爆干锅</p>
+						</div>
+					</div>
+					<div class="item">
+						<img src="../authpuppy/web/img/0002.png" alt="">
+						<div class="carousel-caption">
+							<h4>经典火锅</h4>
+							<p>晚市88折, 午市夜宵68折</p>
+						</div>
+					</div>
+					<div class="item">
+						<img src="../authpuppy/web/img/0003.png" alt="">
+						<div class="carousel-caption">
+							<h4>源自山城</h4>
+							<p>最重庆, 引爆夏日激情</p>
+						</div>
+					</div>
+				</div>
+				<a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+				<a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+			</div>
+
+			<!-- <hr> -->
+
+			<div class="row-fluid marketing">
+				<div class="span6">
+					<h2>认证成功，祝您用餐愉快。</h2>
+
+					<?php if(strlen($_GET['userurl'])>0){ ?>
+					<a href="<?php echo $_GET['userurl']; ?>"><?php echo $_GET['userurl']; ?></a>
+					<?php } ?>
+				</div>
+
+				<div class="span6">
+
+						<div class="row-fluid">
+							<div class="span6">
+								<h4>我们的微信</h4>
+								<img src="../authpuppy/web/img/weixin_qr.png" alt="" class="qr">
+								<p></p>
+							</div>
+
+							<div class="span6">
+								<h4>我们的新浪微博</h4>
+								<img src="../authpuppy/web/img/weibo_qr.png" alt="" class="qr">
+								<p></p>
+							</div>
+						</div>
+
+						<h4>关注我们</h4>
+						<p>精彩活动在进行，火锅文化在传承。</p>
+				</div>
 			</div>
 
 			<hr>
@@ -132,18 +168,14 @@
 					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 					<h3 id="myModalLabel">帮助</h3>
 				</div>
-				<!-- <div class="modal-body">
-					<h4>第一步：获取短信动态密码</h4>
-					<p>输入您的手机号码，点击“获取”按钮，等待接受短信密码。</p>
-					<h4>第二步：验证密码</h4>
-					<p>输入短信中的六位动态密码，点击“登陆”按钮，完成验证。</p>
-				</div> -->
+				<div class="modal-body">
+
+				</div>
 				<div class="modal-footer">
 					<button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
 			</div> <!-- help modal -->
 
 		</div> <!-- /container -->
-
 
 
 		<!-- Le javascript
@@ -155,21 +187,21 @@
 
 		<!-- js -->
 		<script type="text/javascript">
-			$(document).ready(function(){
+			/*$(document).ready(function(){
 				if(navigator.userAgent.match(/iPhone|iPod/i))
 				{
 					//window.location = "weixin://r/2mpcU1TEV2ooh0Uwnz-_";
 					window.location = "dianping://shopinfo?id=9078228";
-            		setTimeout( function(){ window.location="https://itunes.apple.com/cn/app/da-zhong-dian-ping-tuan-gou/id351091731?mt=8"; } , 1500);
+					setTimeout( function(){ window.location="https://itunes.apple.com/cn/app/da-zhong-dian-ping-tuan-gou/id351091731?mt=8"; } , 1500);
 				}
 				if(navigator.userAgent.match(/iPad/i))
 				{
 					//window.location = "weixin://r/2mpcU1TEV2ooh0Uwnz-_";
 					window.location = "dianpinghd://shopinfo?id=9078228";
-            		setTimeout( function(){ window.location="https://itunes.apple.com/cn/app/da-zhong-dian-pinghd/id486691005?mt=8"; } , 1500);
+					setTimeout( function(){ window.location="https://itunes.apple.com/cn/app/da-zhong-dian-pinghd/id486691005?mt=8"; } , 1500);
 				}
 			});
-		</script>
+*/		</script>
 
 	</body>
 </html>
