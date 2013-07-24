@@ -189,6 +189,7 @@ class hotspotsms
             <form action="admin.php" method="post" class="navbar-form pull-right">
               <input id="sdate" name="sdate" type="text" value="'.$sdate.'" />
               <input class="btn btn-success" type="submit" value="查询" />
+              <a href="excel.php" class="btn btn-info" target="_blank">导出报表</a>
               <a href="admin.php?a=logout" class="btn btn-danger">退出</a>
             </form>
           </div><!--/.nav-collapse -->
@@ -366,5 +367,21 @@ class hotspotsms
 
 		$data = simplexml_load_string($data);   
 		return $data;
+	}
+
+	public function querydb($sql)
+	{
+		$res = mysqli_query($this->_mysqli, $sql);
+
+		if($res->num_rows > 0)
+		{
+			while($row = mysqli_fetch_assoc($res))
+			{
+				$data[] = $row;
+			}
+
+			return $data;
+		}else
+			return false;
 	}
 }
