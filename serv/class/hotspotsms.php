@@ -33,7 +33,7 @@ class hotspotsms
     protected $_trytime;
 
     /**
-     * 
+     *
      * @var string
      */
     protected $_smsTextPrefix;
@@ -74,8 +74,8 @@ class hotspotsms
 		$mobile  = $_GET['mobile'];
 		$client = $_GET['client'];
 		//$client = addcslashes($client);
-		
-		//-- 确认库中是否存在有效验证码 - 
+
+		//-- 确认库中是否存在有效验证码 -
 		$sql = "select smspass from log where mobile='$mobile' and logtime+300>$logtime order by logtime desc limit 1";
 		$res = mysqli_query($this->_mysqli, $sql);
 
@@ -87,7 +87,7 @@ class hotspotsms
 		else
 		{
 			$smspass = $this->getRandCode();
-			$sql = "insert into log (mobile, smspass, logtime, clientinfo) 
+			$sql = "insert into log (mobile, smspass, logtime, clientinfo)
 					values ('$mobile', '$smspass', $logtime, '$client')";
 			mysqli_query($this->_mysqli, $sql);
 		}
@@ -137,7 +137,7 @@ class hotspotsms
 		{
 			$_SESSION['login'] = true;
 		}
-		
+
 		if(!isset($_SESSION['login']))
 		{
 			$html = '<div class="row-fluid marketing">
@@ -236,7 +236,7 @@ class hotspotsms
 	}
 
 	/**
-	 * 向指定手机号码发送验证码(fetion)
+	 * 向指定手机号码发送验证码(xiao)
 	 * @param string $mobile
 	 * @param string $msg
 	 */
@@ -250,7 +250,7 @@ class hotspotsms
 		$url .= '&auth='.$this->_password;
 		$url .= '&mobile='.$mobile;
 		$url .= '&msg='.$msg;
-		
+
 		try{
 
 			$ch = curl_init();
@@ -275,6 +275,33 @@ class hotspotsms
 			return false;
 		}
 	}
+
+    /**
+     * 向指定手机号码发送验证码(dxton)
+     * @param string $mobile
+     * @param string $msg
+     */
+    function sendSms_dxton($mobile, $text)
+    {
+        $url = "http://www.dxton.com/webservice/sms.asmx/Submit";
+        $post_data = "account=".$this->_account;
+        $post_data .= "&password=".$this->_password;
+        $post_data .= "&mobile=".$mobile;
+        $post_data .= "&content=".rawurlencode($text);
+
+        $curl = curl_init();
+        curl_setopt($curl, CURLOPT_URL, $url);
+        curl_setopt($curl, CURLOPT_HEADER, false);
+        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($curl, CURLOPT_NOBODY, true);
+        curl_setopt($curl, CURLOPT_POST, true);
+        curl_setopt($curl, CURLOPT_POSTFIELDS, $curlPost);
+        $return_str = curl_exec($curl);
+        curl_close($curl);
+
+        //<result>100</result>表示成功,其它的参考文档
+        return simplexml_load_string($return_str);
+    }
 
     /**
 	 * 向指定手机号码发送验证码(fetion)
@@ -354,17 +381,17 @@ class hotspotsms
 
 	protected function getMobileCodeInfo($number)
 	{
-		$url = 'http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo';   
-  
-		$ch = curl_init();   
-		curl_setopt($ch, CURLOPT_URL, $url);   
-		curl_setopt($ch, CURLOPT_POST, true);   
-		curl_setopt($ch, CURLOPT_POSTFIELDS, "mobileCode={$number}&userId=");   
-		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);   
-		$data = curl_exec($ch);   
-		curl_close($ch); 
+		$url = 'http://webservice.webxml.com.cn/WebServices/MobileCodeWS.asmx/getMobileCodeInfo';
 
-		$data = simplexml_load_string($data);   
+		$ch = curl_init();
+		curl_setopt($ch, CURLOPT_URL, $url);
+		curl_setopt($ch, CURLOPT_POST, true);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, "mobileCode={$number}&userId=");
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+		$data = curl_exec($ch);
+		curl_close($ch);
+
+		$data = simplexml_load_string($data);
 		return $data;
 	}
 }
