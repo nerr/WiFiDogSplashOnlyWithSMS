@@ -269,7 +269,7 @@ class hotspotsms
 				//echo "Date:".date('Y-m-d H:i:s', time()).";Failed\n";
 				return false;
 		}
-		catch( Exception $e)
+		catch(Exception $e)
 		{
 			//echo "Date:".date('Y-m-d H:i:s', time()).";ERROR:".$e."\n";
 			return false;
@@ -289,18 +289,32 @@ class hotspotsms
         $post_data .= "&mobile=".$mobile;
         $post_data .= "&content=".rawurlencode($text);
 
-        $curl = curl_init();
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_HEADER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_NOBODY, true);
-        curl_setopt($curl, CURLOPT_POST, true);
-        curl_setopt($curl, CURLOPT_POSTFIELDS, $curlPost);
-        $return_str = curl_exec($curl);
-        curl_close($curl);
+        try{
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_HEADER, false);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($curl, CURLOPT_NOBODY, true);
+            curl_setopt($curl, CURLOPT_POST, true);
+            curl_setopt($curl, CURLOPT_POSTFIELDS, $curlPost);
+            $return_str = curl_exec($curl);
+            curl_close($curl);
 
-        //<result>100</result>表示成功,其它的参考文档
-        return simplexml_load_string($return_str);
+            $xml = simplexml_load_string($return_str);
+            //<result>100</result>表示成功,其它的参考文档
+
+            if($xml->result==100)
+                //echo "Date:".date('Y-m-d H:i:s', time()).";Finished\n";
+                return true;
+            else
+                //echo "Date:".date('Y-m-d H:i:s', time()).";Failed\n";
+                return false;
+        }
+        catch(Exception $e)
+        {
+            //echo "Date:".date('Y-m-d H:i:s', time()).";ERROR:".$e.$xml->message."\n";
+            return false;
+        }
     }
 
     /**
