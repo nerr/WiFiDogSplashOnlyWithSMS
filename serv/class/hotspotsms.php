@@ -281,7 +281,7 @@ class hotspotsms
      * @param string $mobile
      * @param string $msg
      */
-    function sendSms_dxton($mobile, $text)
+    public function sendSms_dxton($mobile, $text)
     {
         $url = "http://www.dxton.com/webservice/sms.asmx/Submit";
         $post_data = "account=".$this->_account;
