@@ -169,7 +169,7 @@ $user_redirect = $_GET['url'];
                         <input type="hidden" name="gw_id" value="<?php echo $_GET['gw_id']; ?>" />
                         <input type="hidden" name="gw_address" value="<?php echo $_GET['gw_address']; ?>" />
                         <input type="hidden" name="gw_port" value="<?php echo $_GET['gw_port']; ?>" />
-                        <input type="hidden" name="url" value="<?php echo $sms_url; ?>/serv/sucess.php?userurl=<?php echo $user_redirect; ?>" />
+                        <input type="hidden" name="url" value="<?php echo $sms_url; ?>/serv/success.php?userurl=<?php echo $user_redirect; ?>" />
                         <input type="hidden" id="authenticators" name="authenticator" value="apAuthSplashOnly"/>
 
                         <input type="hidden" name="md5smspass" id="md5smspass" value="" />
