@@ -1,9 +1,0 @@
-all:
-  ap_plugins_enabled:
-    - apAuthSplashOnlyPlugin
-  ap_modules_enabled:
-    - apAuthSplashOnlyLogin
-  config_options:
-    main_url: 'http://weibo.com/mlyinxiang'
-    site_name: 'MXCQ Free Wi-Fi Login'
-    sms_url: 'http://192.168.7.111'
