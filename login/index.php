@@ -1,5 +1,5 @@
 <?php
-$action = 'http://'.$_SERVER['SERVER_ADDR'].'/wifi/login/';
+$action = 'http://'.$_SERVER['SERVER_ADDR'].'/wifi/login/'.$_SERVER['REQUEST_URI'];
 ?>
 
 <!DOCTYPE html>
