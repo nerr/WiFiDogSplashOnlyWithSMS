@@ -1,7 +1,4 @@
-<?php
-$action = 'http://'.$_SERVER['SERVER_ADDR'].'/wifi/login/'.$_SERVER['REQUEST_URI'];
-?>
-
+<?php $action = 'http://'.$_SERVER['SERVER_ADDR'].'/wifi/login/'.'?'.$_SERVER['QUERY_STRING']; ?>
 <!DOCTYPE html>
 <html>
     <head>
