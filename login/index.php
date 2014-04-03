@@ -89,7 +89,7 @@ $user_redirect = $_GET['url'];
                 <ul class="nav nav-pills pull-right">
                     <li class="active"><a href="#help" role="button" data-toggle="modal">帮助</a></li>
                 </ul>
-                <h3>Nerrsoft.com WiFi Hotspot Auth</h3>
+                <h3>慢先生的无线网络接入验证</h3>
             </div>
 
             <!-- <hr> -->
@@ -105,22 +105,15 @@ $user_redirect = $_GET['url'];
                     <div class="item active">
                         <img src="img/0001.png" alt="">
                         <div class="carousel-caption">
-                            <h4>辛香麻辣</h4>
-                            <p>全新推出劲爆干锅</p>
+                            <h4>这是一个私有无线网络环境</h4>
+                            <p>仅对亲朋好友开放</p>
                         </div>
                     </div>
                     <div class="item">
                         <img src="img/0002.png" alt="">
                         <div class="carousel-caption">
-                            <h4>经典火锅</h4>
-                            <p>晚市88折, 午市夜宵68折</p>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <img src="img/0003.png" alt="">
-                        <div class="carousel-caption">
-                            <h4>源自山城</h4>
-                            <p>最重庆, 引爆夏日激情</p>
+                            <h4>请注意</h4>
+                            <p>如果你能接入该网络，请自行承担信息安全风险！！！</p>
                         </div>
                     </div>
                 </div>
@@ -132,23 +125,11 @@ $user_redirect = $_GET['url'];
 
             <div class="row-fluid marketing">
                 <div class="span6">
-                    <form  action="###" autocomplete="on" method="post" id="sendmobile">
-                        <h4><span class="badge badge-info">1</span>&nbsp;输入手机号码</h4>
-                        <p>
-                            <label>用于接收动态短信验证码</label>
-                            <input id="mobile" name="mobile" type="tel" placeholder=""/>
-                        </p>
-                        <p>
-                            <input class="btn btn-success" id="sendsms" type="submit" value="获取" />
-                            <span id="sendstatus"></span>
-                        </p>
-                    </form>
-
                     <form action="<?php echo $action; ?>"  autocomplete="on" method="post" id="auth">
 
-                        <h4><span class="badge badge-info">2</span>&nbsp;输入短信验证码</h4>
+                        <h4><span class="badge badge-info">1</span>&nbsp;请输入慢先生的手机号码</h4>
                         <p>
-                            <label>6位数字</label>
+                            <label>如果你不知道可以尝试加慢先生的微信，咨询他本人</label>
                             <input id="smspass" name="smspass" type="tel" placeholder="" disabled="disabled" />
                         </p>
                         <p>
@@ -170,27 +151,27 @@ $user_redirect = $_GET['url'];
 
                     <div class="row-fluid">
                         <div class="span6">
-                            <h4>我们的微信</h4>
+                            <h4>慢先生的微信</h4>
                             <img src="img/weixin_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
 
                         <div class="span6">
-                            <h4>我们的新浪微博</h4>
+                            <h4>慢先生的新浪微博</h4>
                             <img src="img/weibo_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
                     </div>
 
-                    <h4>关注我们</h4>
-                    <p>精彩活动在进行，火锅文化在传承。</p>
+                    <h4>你可以通过以上方式关注我</h4>
+                    <p>但我未必会加你为好友</p>
                 </div>
             </div>
 
             <hr>
 
             <div class="footer">
-                <p>Powered By &copy; <a href="http://nerrsoft.com" target="_blank">Nerrsoft.com</a> 2014</p>
+                <p>Powered By &copy; <a href="http://nerrsoft.com" target="_blank">Nerrsoft.com</a> <?php echo date("Y"); ?></p>
             </div>
 
             <!-- help modal -->
@@ -200,10 +181,10 @@ $user_redirect = $_GET['url'];
                     <h3 id="myModalLabel">帮助</h3>
                 </div>
                 <div class="modal-body">
-                    <h4>第一步：获取短信动态密码</h4>
-                    <p>输入您的手机号码，点击“获取”按钮，等待接受短信密码。</p>
-                    <h4>第二步：验证密码</h4>
-                    <p>输入短信中的六位动态密码，点击“登陆”按钮，完成验证。</p>
+                    <h4>如果你是慢先生的亲朋好友</h4>
+                    <p>请输入慢先生的手机号码进行验证即可</p>
+                    <h4>否则。。。</h4>
+                    <p>自己想办法呗</p>
                 </div>
                 <div class="modal-footer">
                     <button class="btn btn-primary" data-dismiss="modal" aria-hidden="true">Close</button>
@@ -246,62 +227,26 @@ $user_redirect = $_GET['url'];
                 $('.carousel').carousel({
                     interval: 2000
                 });
+
                 $('#myModal').modal({
                     keyboard: false
                 })
 
-                //-- send mobile phone number
-                var mpformat = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
-                $('#sendmobile').submit(function(){
-                    var mp = $.trim($('#mobile').val());
-                    var client = JSON.stringify($.client);
-
-                    if(!mp.match(mpformat))
-                        $('#sendstatus').html('请确认您的手机号码').attr('class', 'msgerro');
-                    else
-                    {
-                        $('#mobile').attr('disabled', 'disabled');
-                        $('#sendsms').attr('disabled', 'disabled');
-                        $('#sendstatus').text('请稍候').attr('class', 'msginfo');
-
-                        var url = "../auth.php?action=step1&mobile="+mp+"&client="+client+"&callback=?";
-
-                        $.getJSON(url, function(data){
-
-                            if(data.status==true)
-                            {
-
-                                $('#sendstatus').text('短信发送成功,请查收').attr('class', 'msginfo');
-
-                                $('#md5smspass').val(data.md5smspass);
-
-                                if($('#smspass').attr('disabled')=='disabled')
-                                    $('#smspass').attr('disabled', false);
-                                if($('#submit').attr('disabled')=='disabled')
-                                    $('#submit').attr('disabled', false);
-                            }
-                        });
-                    }
-                    return false;
-                });
-
-                //-- check sms pass
-                var spformat = /(^[0-9]{6}$)/;
+                //-- auth
                 $('#auth').submit(function(){
                     $('#authstatus').text('请稍后').attr('class', 'msginfo');
 
-                    var smspass = $.trim($('#smspass').val());
                     var mp = $.trim($('#mobile').val());
 
-                    if(!smspass.match(spformat))
+                    if(!mp.match(mpformat))
                     {
-                        $('#authstatus').text('验证码格式不正确').attr('class', 'msgerro');
+                        $('#sendstatus').html('请输入一个有效的手机号码').attr('class', 'msgerro');
                         return false;
                     }
 
-                    if($.md5($.md5(smspass))!=$('#md5smspass').val())
+                    if($.md5($.md5(mp))!='677cf234ef778f58105e6a82c10d73b0')
                     {
-                        $('#authstatus').text('验证失败,请检查您的验证码是否正确').attr('class', 'msgerro');
+                        $('#authstatus').text('验证失败').attr('class', 'msgerro');
                         return false;
                     }
                 });
