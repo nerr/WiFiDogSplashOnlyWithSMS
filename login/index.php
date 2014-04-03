@@ -98,7 +98,6 @@ $user_redirect = $_GET['url'];
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
                     <li data-target="#myCarousel" data-slide-to="1"></li>
-                    <li data-target="#myCarousel" data-slide-to="2"></li>
                 </ol>
 
                 <div class="carousel-inner">
@@ -127,13 +126,13 @@ $user_redirect = $_GET['url'];
                 <div class="span6">
                     <form action="<?php echo $action; ?>"  autocomplete="on" method="post" id="auth">
 
-                        <h4><span class="badge badge-info">1</span>&nbsp;请输入慢先生的手机号码</h4>
+                        <h4><span class="badge badge-info">1</span>&nbsp;请输入慢先生的手机号</h4>
                         <p>
-                            <label>如果你不知道可以尝试加慢先生的微信，咨询他本人</label>
-                            <input id="smspass" name="smspass" type="tel" placeholder="" disabled="disabled" />
+                            <label>或尝试加慢先生的微信并咨询他本人</label>
+                            <input id="mobile" name="mobile" type="tel" placeholder="" />
                         </p>
                         <p>
-                            <input name="submit[apAuthSplashOnlyConnect]" class="btn btn-success" id="submit" type="submit" value="登陆" disabled="disabled" />
+                            <input name="submit[apAuthSplashOnlyConnect]" class="btn btn-success" id="submit" type="submit" value="登陆" />
                             <span id="authstatus"></span>
                         </p>
 
@@ -157,7 +156,7 @@ $user_redirect = $_GET['url'];
                         </div>
 
                         <div class="span6">
-                            <h4>慢先生的新浪微博</h4>
+                            <h4>慢先生的微博</h4>
                             <img src="img/weibo_qr.png" alt="" class="qr">
                             <p></p>
                         </div>
