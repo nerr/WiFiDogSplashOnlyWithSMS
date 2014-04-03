@@ -1,6 +1,5 @@
 <?php
 $action = 'http://'.$_SERVER['SERVER_ADDR'].$_SERVER['REQUEST_URI'];
-$user_redirect = $_GET['url'];
 ?>
 
 <!DOCTYPE html>
@@ -89,7 +88,7 @@ $user_redirect = $_GET['url'];
                 <ul class="nav nav-pills pull-right">
                     <li class="active"><a href="#help" role="button" data-toggle="modal">帮助</a></li>
                 </ul>
-                <h3>慢先生的无线网络接入验证</h3>
+                <h3>慢先生的无线网络</h3>
             </div>
 
             <!-- <hr> -->
@@ -112,7 +111,7 @@ $user_redirect = $_GET['url'];
                         <img src="img/002.jpg" alt="">
                         <div class="carousel-caption">
                             <h4>请注意</h4>
-                            <p>如果你能接入该网络，请自行承担信息安全风险！！！</p>
+                            <p>本网络不保证你的信息安全！！！</p>
                         </div>
                     </div>
                 </div>
@@ -139,7 +138,7 @@ $user_redirect = $_GET['url'];
                         <input type="hidden" name="gw_id" value="<?php echo $_GET['gw_id']; ?>" />
                         <input type="hidden" name="gw_address" value="<?php echo $_GET['gw_address']; ?>" />
                         <input type="hidden" name="gw_port" value="<?php echo $_GET['gw_port']; ?>" />
-                        <input type="hidden" name="url" value="<?php echo $user_redirect; ?>" />
+                        <input type="hidden" name="url" value="<?php echo $_GET['url']; ?>" />
                         <input type="hidden" id="authenticators" name="authenticator" value="apAuthSplashOnly"/>
 
                         <input type="hidden" name="md5smspass" id="md5smspass" value="" />
