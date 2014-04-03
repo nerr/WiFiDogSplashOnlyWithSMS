@@ -102,14 +102,14 @@ $user_redirect = $_GET['url'];
 
                 <div class="carousel-inner">
                     <div class="item active">
-                        <img src="img/0001.png" alt="">
+                        <img src="img/001.jpg" alt="">
                         <div class="carousel-caption">
                             <h4>这是一个私有无线网络环境</h4>
                             <p>仅对亲朋好友开放</p>
                         </div>
                     </div>
                     <div class="item">
-                        <img src="img/0002.png" alt="">
+                        <img src="img/002.jpg" alt="">
                         <div class="carousel-caption">
                             <h4>请注意</h4>
                             <p>如果你能接入该网络，请自行承担信息安全风险！！！</p>
@@ -232,6 +232,7 @@ $user_redirect = $_GET['url'];
                 })
 
                 //-- auth
+                var mpformat = /(^0{0,1}1[3|4|5|6|7|8|9][0-9]{9}$)/;
                 $('#auth').submit(function(){
                     $('#authstatus').text('请稍后').attr('class', 'msginfo');
 
