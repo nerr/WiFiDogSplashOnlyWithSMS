@@ -322,7 +322,7 @@ class hotspotsms
 	 * @param string $mobile
 	 * @param string $msg
 	 */
-	protected function sendSms_fetion($mobile, $msg)
+	public function sendSms_fetion($mobile, $msg)
 	{
 		$fetion = new PHPFetion($this->_mobile, $this->_password);
 		try
