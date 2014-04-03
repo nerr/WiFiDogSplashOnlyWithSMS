@@ -166,7 +166,7 @@
             <hr>
 
             <div class="footer">
-                <p>Powered By &copy; <a href="http://nerrsoft.com" target="_blank">Nerrsoft.com</a> <?php echo date("Y"); ?></p>
+                <p>Powered By <a href="http://nerrsoft.com" target="_blank">Nerrsoft.com</a> &copy; <?php echo date("Y"); ?></p>
             </div>
 
             <!-- help modal -->
