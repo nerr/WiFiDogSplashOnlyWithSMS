@@ -4,4 +4,6 @@ require 'class/hotspotsms.php';
 
 $hotspot = new hotspotsms($config);
 
-$hotspot->sendSms_fetion('13524289996', "测试");
+$result = $hotspot->sendSms_fetion('13524289996', "测试");
+
+echo $result;
