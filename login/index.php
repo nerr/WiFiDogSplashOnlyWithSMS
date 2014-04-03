@@ -240,7 +240,7 @@ $user_redirect = $_GET['url'];
 
                     if(!mp.match(mpformat))
                     {
-                        $('#sendstatus').html('请输入一个有效的手机号码').attr('class', 'msgerro');
+                        $('#authstatus').html('请输入一个有效的手机号码').attr('class', 'msgerro');
                         return false;
                     }
 
