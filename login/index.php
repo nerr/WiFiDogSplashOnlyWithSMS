@@ -1,12 +1,12 @@
 <?php
-$action = 'http://'.$_SERVER['SERVER_ADDR'].$_SERVER['REQUEST_URI'];
+$action = 'http://'.$_SERVER['SERVER_ADDR'].'/wifi';
 ?>
 
 <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
-        <title>Hotspot Auth</title>
+        <title>慢先生的无线网络接入验证</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Hotspot Auth Page">
         <meta name="revised" content="Leon, 2014/4/2/" />
@@ -124,8 +124,10 @@ $action = 'http://'.$_SERVER['SERVER_ADDR'].$_SERVER['REQUEST_URI'];
             <div class="row-fluid marketing">
                 <div class="span6">
                     <form action="<?php echo $action; ?>"  autocomplete="on" method="post" id="auth">
-
-                        <h4><span class="badge badge-info">1</span>&nbsp;请输入慢先生的手机号</h4>
+                        <h4>
+                            <span class="badge badge-info">1</span>
+                            &nbsp;请输入慢先生的手机号
+                        </h4>
                         <p>
                             <label>或尝试加慢先生的微信并咨询他本人</label>
                             <input id="mobile" name="mobile" type="tel" placeholder="" />
@@ -140,8 +142,6 @@ $action = 'http://'.$_SERVER['SERVER_ADDR'].$_SERVER['REQUEST_URI'];
                         <input type="hidden" name="gw_port" value="<?php echo $_GET['gw_port']; ?>" />
                         <input type="hidden" name="url" value="<?php echo $_GET['url']; ?>" />
                         <input type="hidden" id="authenticators" name="authenticator" value="apAuthSplashOnly"/>
-
-                        <input type="hidden" name="md5smspass" id="md5smspass" value="" />
                     </form>
                 </div>
 
