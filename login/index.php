@@ -12,7 +12,7 @@
         <!-- Le styles -->
         <link href="css/bootstrap.css" rel="stylesheet">
         <style type="text/css">
-            body {
+            body{
                 padding-top: 20px;
                 padding-bottom: 40px;
                 font-family: "Microsoft YaHei","Trebuchet MS","Myriad Pro",Arial,sans-serif;
@@ -146,27 +146,23 @@
 
                     <div class="row-fluid">
                         <div class="span6">
-                            <h4>慢先生的微信</h4>
-                            <img src="img/weixin_qr.png" alt="" class="qr">
+                            <h4>微信公众帐号</h4>
+                            <img src="img/qrcode_for_gh_043d24af9553_344.jpg" alt="" class="qr">
                             <p></p>
                         </div>
 
                         <div class="span6">
-                            <h4>慢先生的微博</h4>
-                            <img src="img/weibo_qr.png" alt="" class="qr">
-                            <p></p>
+                            <h4>那个啥。。。</h4>
+                            <p>你可以关注我的微信公众帐号，向我索取验证信息，但是，我不一定会搭理你。</p>
                         </div>
                     </div>
-
-                    <h4>你可以通过以上方式关注我</h4>
-                    <p>但我未必会加你为好友</p>
                 </div>
             </div>
 
             <hr>
 
             <div class="footer">
-                <p>Powered By <a href="http://nerrsoft.com" target="_blank">Nerrsoft.com</a> &copy; <?php echo date("Y"); ?></p>
+                <p>Copyright &copy; <?php echo date("Y"); ?> <a href="http://nerrsoft.com" target="_blank">Nerrosft.com</a> All rights reserved.</p>
             </div>
 
             <!-- help modal -->
